@@ -33,6 +33,10 @@ std::string toString(const _Tp &x) {
     return oss.str();
 }
 
+inline float rand_float() {
+    return (float)rand() / (float)RAND_MAX;
+}
+
 #define PI M_PI
 
 #endif  // STDHEADER_H

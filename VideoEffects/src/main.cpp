@@ -122,10 +122,6 @@ void initVSL() {
     //mesh = Mesh::plane();
 }
 
-float rand_float() {
-    return (float)rand() / (float)RAND_MAX;
-}
-
 void initScene(int argc, char** argv) {
     prevTime = glutGet(GLUT_ELAPSED_TIME);
     videoTexture = VideoTexture::fromFile(std::string(argc < 2 ? "./data/fits.mp4" : argv[1]));
