@@ -1,1 +1,17 @@
 This project shows some interesting video effects.
+
+Some effects:
+- film
+![film](screenshots/film.png)
+
+- bad tv
+![bad tv](screenshots/badtv.png)
+
+- rgb shift
+![rgb shift](screenshots/rgbshift.png)
+
+- snow
+![snow](screenshots/snow.png)
+
+- put it together
+![all](screenshots/all.png)

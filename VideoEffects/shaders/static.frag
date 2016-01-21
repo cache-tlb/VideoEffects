@@ -15,7 +15,7 @@ float rand(vec2 co){
 void main() {
 	vec2 p = vUv;
 	vec4 color = texture2D(tDiffuse, p);
-	vec2 fragCoord = gl_FragCoord;
+	vec4 fragCoord = gl_FragCoord;
 	float xs = floor(fragCoord.x / size);
 	float ys = floor(fragCoord.y / size);
 	vec4 snow = vec4(rand(vec2(xs * time,ys * time))*amount);
