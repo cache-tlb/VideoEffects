@@ -2,16 +2,16 @@ This project shows some interesting video effects.
 
 Some effects:
 - film
-![film](/screenshot/film.png)
+![film](/screenshot/film.png "film")
 
 - bad tv
-![bad tv](/screenshot/badtv.png)
+![bad tv](/screenshot/badtv.png "bad tv")
 
 - rgb shift
-![rgb shift](/screenshot/rgbshift.png)
+![rgb shift](/screenshot/rgbshift.png "rgb shift")
 
 - snow
-![snow](/screenshot/snow.png)
+![snow](/screenshot/snow.png "snow")
 
 - put it together
-![all](/screenshot/all.png)
+![all](/screenshot/all.png "put it together")
