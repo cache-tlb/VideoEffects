@@ -12,14 +12,15 @@ VideoTexture::VideoTexture(int w, int h, cv::VideoCapture &_cap)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     // format is GL_RGB
     // type is GL_UNSIGNED_BYTE;
-
-    /*glGenBuffersARB(2, pboIds);
+    /*
+    glGenBuffersARB(2, pboIds);
     glBindBufferARB(GL_PIXEL_UNPACK_BUFFER_ARB, pboIds[0]);
     glBufferDataARB(GL_PIXEL_UNPACK_BUFFER_ARB, dataSize, 0, GL_STREAM_DRAW_ARB);
     glBindBufferARB(GL_PIXEL_UNPACK_BUFFER_ARB, pboIds[1]);
     glBufferDataARB(GL_PIXEL_UNPACK_BUFFER_ARB, dataSize, 0, GL_STREAM_DRAW_ARB);
     glBindBufferARB(GL_PIXEL_UNPACK_BUFFER_ARB, 0);
     */
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
 }
 
 VideoTexture::~VideoTexture() {}
@@ -54,9 +55,11 @@ void VideoTexture::updateFrame() {
         frame_ms = cap.get(CV_CAP_PROP_POS_MSEC);
     }
     if (refreshed) { 
-        cv::cvtColor(videoFrame, videoFrame, CV_BGR2RGB);
         glBindTexture(GL_TEXTURE_2D, textureId);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, videoFrame.data);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, videoFrame.data);
+        /*glBindBuffer(GL_PIXEL_UNPACK_BUFFER_ARB, pboIds[0]);
+        glBufferSubData(GL_PIXEL_UNPACK_BUFFER_ARB, 0, dataSize, (void *)videoFrame.data);
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, width, height, GL_BGR, GL_UNSIGNED_BYTE, 0);*/
     }
 }
 

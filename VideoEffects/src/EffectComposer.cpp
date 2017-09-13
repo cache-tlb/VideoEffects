@@ -11,6 +11,9 @@ EffectComposer::EffectComposer() {
     staticShader = new Shader("./shaders/default.vert", "./shaders/static.frag");
     copyShader = new Shader("./shaders/default.vert", "./shaders/copy.frag");
 
+    readBuffer = NULL;
+    writeBuffer = NULL;
+
     shaderTime = 0.f;
 }
 
